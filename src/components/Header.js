@@ -29,11 +29,11 @@ const Header = ({ scrollY }) => {
             position: "absolute",
             width: WIDTH,
             height: 200,
-            backgroundColor: "#282828",
+            backgroundColor: Colors.accent,
             transform: [{
                 translateY: -200
             }],
-            backgroundColor: "#282828",
+            backgroundColor: Colors.accent,
             opacity: opacityBG.opacity
         }} />
         <Animated.View style={[styles.container,
@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignSelf: "center",
         backgroundColor: Colors.accent,
+        borderBottomWidth  : 0.25,
+        borderColor  : Colors.text
     },
     text: {
         color: Colors.text,

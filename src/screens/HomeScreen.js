@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { View, StyleSheet, Text, SafeAreaView, ScrollView, Animated, FlatList } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView, ScrollView, Animated, FlatList, Dimensions } from 'react-native';
 import Heading from '../components/Heading';
 import Colors from '../constants/Colors';
 import DrawerIcon from '../components/DrawerIcon';
 import Spacer from '../components/Spacer';
 import Header from '../components/Header'
+
+const HEIGHT = Dimensions.get('screen').height
 
 const HomeScreen = ({ navigation }) => {
 
@@ -35,6 +37,102 @@ const HomeScreen = ({ navigation }) => {
                 stickyHeaderIndices={[0]}
             >
                 <Heading scrollY={scrollY} text={"Water Eject Tool"} />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
+                <View
+                style = {{
+                    width : 100,
+                    height : 100,
+                    backgroundColor : 'red',
+                    margin : 10
+                }}
+                />
 
             </Animated.ScrollView>
         </View>
@@ -46,7 +144,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.bg,
         flex: 1,
-        paddingTop: Platform.OS === "android" ? 25 : null,
+        paddingTop: Platform.OS === "android" ? HEIGHT * 0.045 : null,
     }
 });
 
