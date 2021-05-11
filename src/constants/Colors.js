@@ -1,6 +1,6 @@
 export default {
 
     bg : '#000000',
-    text: '	#FFFFFF',
-    accent : '#add8e6',
+    text: '#FFFFFF',
+    accent : '#282828',
 }

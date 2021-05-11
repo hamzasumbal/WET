@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, Animated, Dimensions, } from 'react-native';
+import Colors from '../constants/Colors';
 
 const WIDTH = Dimensions.get('window').width;
 
@@ -7,20 +8,26 @@ const WIDTH = Dimensions.get('window').width;
 const Heading = ({scrollY, text}) => {
 
 
-    return <View style={styles.container}>
+    return <Animated.View style={styles.container}>
         <Animated.Text
             style={{
-                //fontSize: 32,
                 fontWeight: 'bold',
-                color: 'white',
+                color: Colors.text,
                 fontSize: scrollY.interpolate({
                     inputRange: [-250, -30],
                     outputRange: [40, 35],
                     extrapolate: 'clamp'
-                })
+                }),
+                transform : [{
+                    translateY : scrollY.interpolate({
+                        inputRange : [0, 0, 100],
+                        outputRange : [0, 0,-100]
+                    })
+                }]
+
             }}
         >{text}</Animated.Text>
-    </View>
+    </Animated.View>
 };
 
 
