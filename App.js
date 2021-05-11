@@ -1,21 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { View, Text , Dimensions} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import HomeScreen from './src/screens/HomeScreen';
+import SettingScreen from './src/screens/SettingScreen';
 
-export default function App() {
+
+const WIDTH = Dimensions.get('screen').width
+
+const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+function MyDrawer() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Drawer.Navigator
+    drawerPosition = {'right'}
+    drawerStyle={{
+	    width: WIDTH * 0.6,
+	  }}
+    >
+      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Setting" component={SettingScreen} />
+    </Drawer.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+      >
+        <Stack.Screen name="Home" component={MyDrawer} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
