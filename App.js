@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from './src/screens/HomeScreen';
 import SettingScreen from './src/screens/SettingScreen';
+import PlayScreen from './src/screens/PlayScreen';
 
 
 const WIDTH = Dimensions.get('screen').width
@@ -35,6 +36,7 @@ function App() {
       }}
       >
         <Stack.Screen name="Home" component={MyDrawer} />
+        <Stack.Screen name="Play" component={PlayScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

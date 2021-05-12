@@ -5,6 +5,7 @@ import Colors from '../constants/Colors';
 import DrawerIcon from '../components/DrawerIcon';
 import Spacer from '../components/Spacer';
 import Header from '../components/Header'
+import StartButton from '../components/StartButton';
 
 const HEIGHT = Dimensions.get('screen').height
 
@@ -16,7 +17,7 @@ const HomeScreen = ({ navigation }) => {
     return <SafeAreaView
         style={styles.container}
     >
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 ,}}>
             <Header scrollY={scrollY} />
             <DrawerIcon onPress = {navigation.openDrawer}/>
             <Animated.ScrollView style={{ flex: 1 }}
@@ -37,104 +38,8 @@ const HomeScreen = ({ navigation }) => {
                 stickyHeaderIndices={[0]}
             >
                 <Heading scrollY={scrollY} text={"Water Eject Tool"} />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-                <View
-                style = {{
-                    width : 100,
-                    height : 100,
-                    backgroundColor : 'red',
-                    margin : 10
-                }}
-                />
-
             </Animated.ScrollView>
+            <StartButton text = {"Start"} onPress = {()=>navigation.navigate("Play")}/>
         </View>
     </SafeAreaView>
 };
