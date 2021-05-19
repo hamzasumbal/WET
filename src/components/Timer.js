@@ -10,7 +10,7 @@ const Timmer = () => {
 
     const [key, setKey] = useState(0)
 
-    const fadeIn = async () => {
+    const springAnim = async () => {
 
             Animated.spring(Anim, {
                 toValue: 1.2,
@@ -23,7 +23,7 @@ const Timmer = () => {
 
     useEffect(()=>{
 
-        fadeIn()
+        springAnim()
     },[])
 
 
