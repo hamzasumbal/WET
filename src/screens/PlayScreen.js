@@ -18,11 +18,12 @@ const PlayScreen = () => {
     >
 
         <View style={styles.subContainer}>
-            {count !== 0 ?
+            {count === 0 ?
 
+                <Timmer />
+
+                :
                 <Countdown count={count} setCount={setCount} />
-
-                : <Timmer />
 
             }
 

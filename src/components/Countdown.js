@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, StyleSheet, Text, SafeAreaView, Dimensions, Animated } from 'react-native';
+import { Audio } from 'expo-av';
 import Colors from '../constants/Colors'
 const HEIGHT = Dimensions.get('screen').height
 
@@ -7,7 +8,7 @@ const HEIGHT = Dimensions.get('screen').height
 const Countdown = ({count , setCount}) => {
 
     const Anim = useRef(new Animated.Value(0)).current;
-
+    const [sound, setSound] = useState();
     const springAnim = async () => {
 
         Animated.sequence([
@@ -26,12 +27,35 @@ const Countdown = ({count , setCount}) => {
 
     };
 
+    async function playSound() {
+        console.log('Loading Sound');
+        const { sound } = await Audio.Sound.createAsync(
+           require('../../assets/countdown.mp3')
+        );
+        setSound(sound);
+    
+        console.log('Playing Sound');
+        await sound.playAsync(); }
+    
+      useEffect(() => {
+        return sound
+          ? () => {
+              console.log('Unloading Sound');
+              sound.unloadAsync(); }
+          : undefined;
+      }, [sound]);
+
+
     useEffect(() => {
         springAnim()
+        playSound()
         let interval = setInterval(() => {
             springAnim()
             setCount(prev => {
-                if (prev === 1) clearInterval(interval)
+                if (prev === 1) 
+                {
+                    clearInterval(interval)
+                }
                 return prev - 1
             })
         }, 1000)
