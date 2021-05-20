@@ -6,12 +6,14 @@ import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
 import CTAButton from './CTAButton';
 import TextButton from './TextButton';
 import SoundTest from './SoundTest';
+import StopButton from './StopButton';
 const HEIGHT = Dimensions.get('screen').height
-
+const WIDTH = Dimensions.get('screen').width
 
 const Timmer = () => {
     const Anim = useRef(new Animated.Value(0)).current;
     const Anim1 = useRef(new Animated.Value(0)).current;
+    const Anim2 = useRef(new Animated.Value(0)).current;
     const [sound, setSound] = useState();
     const [complete, setComplete] = useState(false)
     const [key, setKey] = useState(0);
@@ -37,7 +39,7 @@ const Timmer = () => {
 
     };
 
-    const TranslateOutAnim = async () => {
+    const translateOutAnim1 = async () => {
 
         Animated.timing(Anim1, {
             toValue: HEIGHT * 0.2,
@@ -48,11 +50,33 @@ const Timmer = () => {
     };
 
 
-    const TranslateInAnim = async () => {
+    const translateInAnim1 = async () => {
 
         Animated.timing(Anim1, {
             toValue: 0,
             duration: 150,
+            useNativeDriver: false
+        }).start(); // start the sequence group
+
+    };
+
+
+    const translateOutAnim2 = async () => {
+
+        Animated.timing(Anim2, {
+            toValue: WIDTH * 0.25,
+            duration: 300,
+            useNativeDriver: false
+        }).start(); // start the sequence group
+
+    };
+
+
+    const translateInAnim2 = async () => {
+
+        Animated.timing(Anim2, {
+            toValue: 0,
+            duration: 200,
             useNativeDriver: false
         }).start(); // start the sequence group
 
@@ -80,14 +104,22 @@ const Timmer = () => {
 
     useEffect(() => {
         springInAnim()
-          playSound()
+        playSound()
     }, [])
 
+
+    const completeSequence = () => {
+        springOutAnim()
+        translateOutAnim1()
+        Anim2.setValue(0)
+        setComplete(true)
+
+    }
 
 
     return <View>
         {complete ?
-           <SoundTest/>
+            <SoundTest />
             : null}
         <Animated.View style={{
             transform: [{ scale: Anim }],
@@ -108,12 +140,7 @@ const Timmer = () => {
                         [Colors.shade, 0.4],
                     ]}
 
-                    onComplete={() => {
-                        /* setKey(prevKey => prevKey + 1) */
-                        springOutAnim()
-                        TranslateOutAnim()
-                        setComplete(true)
-                    }}
+                    onComplete={completeSequence}
                 >
                     {({ remainingTime, animatedColor }) => {
 
@@ -127,14 +154,35 @@ const Timmer = () => {
                 {complete ?
                     <TextButton text={"Play Again"} onPress={() => {
                         setKey(prevKey => prevKey + 1)
+                        setPlay(true)
                         setComplete(false)
                         springInAnim()
-                        TranslateInAnim()
+                        translateInAnim1()
                         playSound()
 
                     }} />
                     :
-                    <CTAButton play={play} setPlay={setPlay} sound={sound} />
+                    <View>
+                        <CTAButton play={play} setPlay={setPlay} sound={sound}
+                            onPress={() => {
+                                play ? translateOutAnim2() : translateInAnim2()
+                            }}
+                        />
+                            <Animated.View style={{
+                                position: "absolute",
+                                alignSelf: "center",
+                                transform: [{ translateX: Anim2 }],
+                                zIndex: -1,
+                                opacity: Anim2.interpolate({
+                                    inputRange: [0,WIDTH * 0.1, WIDTH * 0.25],
+                                    outputRange: [0,0, 1]
+                                })
+                            }}>
+                                <StopButton
+                                    onPress={completeSequence}
+                                />
+                            </Animated.View>
+                    </View>
                 }
 
             </Animated.View>
@@ -145,7 +193,7 @@ const Timmer = () => {
 
 
 const styles = StyleSheet.create({
-    testButtonContainer : { position: "absolute", alignSelf: "center", top : HEIGHT * 0.05, zIndex : 99 }
+    testButtonContainer: { position: "absolute", alignSelf: "center", top: HEIGHT * 0.05, zIndex: 99 }
 });
 
 

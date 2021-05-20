@@ -6,10 +6,10 @@ import { AntDesign } from '@expo/vector-icons';
 const WIDTH = Dimensions.get("screen").width;
 
 
-const CTAButton = ({play, setPlay, sound}) => {
+const CTAButton = ({ play, setPlay, sound, onPress }) => {
 
 
-  /*   const [play, setPlay] = useState(false) */
+    /*   const [play, setPlay] = useState(false) */
 
 
     return <TouchableOpacity style={[styles.container, {
@@ -17,24 +17,27 @@ const CTAButton = ({play, setPlay, sound}) => {
         borderWidth: 3,
         borderColor: !play ? Colors.shade : Colors.bg
     }]}
-    onPress = {async ()=>{
-            if(play)
-            {
-               await sound.pauseAsync()
+        onPress={async () => {
+            if (onPress) {
+                onPress()
+            }
+
+            if (play) {
+                await sound.pauseAsync()
             }
             else {
-               await sound.playAsync()
+                await sound.playAsync()
             }
             setPlay(!play)
-    }}
+        }}
     >
         {play ?
             <AntDesign name="pause" size={38} color="black" />
             :
-            <Entypo name="controller-play" size={38} color= {Colors.shade} style = {{
-                left : 3
+            <Entypo name="controller-play" size={38} color={Colors.shade} style={{
+                left: 3
             }} />
-            }
+        }
 
 
     </TouchableOpacity>
