@@ -13,7 +13,7 @@ const SoundTest = () => {
     async function playSound() {
         console.log('Loading Sound');
         const { sound } = await Audio.Sound.createAsync(
-            require('../../assets/countdown.mp3')
+           { uri : "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"}
         );
         setSound(sound);
         sound.setOnPlaybackStatusUpdate(async (status) => {
