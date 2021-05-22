@@ -50,7 +50,7 @@ const HomeScreen = ({ navigation }) => {
                 <HowItWorks/>
                 <Spacer vertical = {20}/>
             </Animated.ScrollView>
-            <StartButton text = {"Eject Water"} onPress = {()=>navigation.navigate("Play")}/>
+            <StartButton text = {"Start"} onPress = {()=>navigation.navigate("Play")}/>
         </View>
     </SafeAreaView>
 };

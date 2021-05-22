@@ -7,6 +7,7 @@ import CTAButton from './CTAButton';
 import TextButton from './TextButton';
 import SoundTest from './SoundTest';
 import StopButton from './StopButton';
+import { FontAwesome } from '@expo/vector-icons';
 const HEIGHT = Dimensions.get('screen').height
 const WIDTH = Dimensions.get('screen').width
 
@@ -144,11 +145,19 @@ const Timmer = () => {
                 >
                     {({ remainingTime, animatedColor }) => {
 
-                        return <Animated.Text style={{
-                            color: Colors.shade, fontSize: 70, fontWeight: 'bold'
-                        }}>
-                            {remainingTime}
-                        </Animated.Text>
+                        return <>
+                            {remainingTime === 0 ?
+                                <FontAwesome name="check" size={60} color={Colors.green} />
+                                :
+                                <Animated.Text style={{
+                                    color: Colors.shade, fontSize: 70, fontWeight: 'bold'
+                                }}>
+                                    {remainingTime}
+                                </Animated.Text>
+                            }
+                        </>
+
+
                     }}
                 </CountdownCircleTimer>
                 {complete ?
@@ -168,20 +177,20 @@ const Timmer = () => {
                                 play ? translateOutAnim2() : translateInAnim2()
                             }}
                         />
-                            <Animated.View style={{
-                                position: "absolute",
-                                alignSelf: "center",
-                                transform: [{ translateX: Anim2 }],
-                                zIndex: -1,
-                                opacity: Anim2.interpolate({
-                                    inputRange: [0,WIDTH * 0.1, WIDTH * 0.25],
-                                    outputRange: [0,0, 1]
-                                })
-                            }}>
-                                <StopButton
-                                    onPress={completeSequence}
-                                />
-                            </Animated.View>
+                        <Animated.View style={{
+                            position: "absolute",
+                            alignSelf: "center",
+                            transform: [{ translateX: Anim2 }],
+                            zIndex: -1,
+                            opacity: Anim2.interpolate({
+                                inputRange: [0, WIDTH * 0.1, WIDTH * 0.25],
+                                outputRange: [0, 0, 1]
+                            })
+                        }}>
+                            <StopButton
+                                onPress={completeSequence}
+                            />
+                        </Animated.View>
                     </View>
                 }
 

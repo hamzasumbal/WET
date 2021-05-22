@@ -28,7 +28,7 @@ const Steps = () => {
             resizeMode={"contain"}
         />
         <Spacer/>
-        <Text style = {styles.text}>2. Press "Eject Water" and place your phone with screen facing down.</Text>
+        <Text style = {styles.text}>2. Press "Start" and place your phone with screen facing down.</Text>
         <Spacer/>
     </View>
 };
