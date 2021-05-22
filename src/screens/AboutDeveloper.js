@@ -42,7 +42,7 @@ const AboutDeveloper = ({ navigation }) => {
                 <View style={{ alignItems: "center",}}>
                     <Spacer  vertical = {30}/>
                     <View style = {styles.imageBorder}>
-                    <Image style={styles.image} source = {require('../../assets/profileimage.png')}/>
+                    <Image style={styles.image} source = {require('../../assets/profileimage.jpg')}/>
                     </View>
                    <Spacer/>
                     <Text style = {styles.name}>Hamza Sumbal</Text>
