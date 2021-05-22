@@ -7,8 +7,11 @@ import HomeScreen from './src/screens/HomeScreen';
 import SettingScreen from './src/screens/SettingScreen';
 import PlayScreen from './src/screens/PlayScreen';
 import Colors from './src/constants/Colors';
+import AboutDeveloper from './src/screens/AboutDeveloper';
+import Spacer from './src/components/Spacer';
 
 
+const HEIGHT = Dimensions.get('screen').height
 const WIDTH = Dimensions.get('screen').width
 
 const Stack = createStackNavigator();
@@ -18,14 +21,20 @@ function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
       <View style = {{
-        height : 200,
+        height : HEIGHT * 0.2,
         width : WIDTH * 0.5,
         borderWidth : 2,
         alignSelf : "center",
-        backgroundColor : "red"
+        justifyContent : "flex-end",
+        alignItems : "center",
       }}> 
-
+        <Text style = {{
+          fontSize : 20,
+          fontWeight : "bold",
+          color : Colors.text
+        }}>Water Eject Tool</Text>
       </View>
+      <Spacer vertical = {HEIGHT * 0.07}/>
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
   );
@@ -50,7 +59,7 @@ function MyDrawer() {
     }
     >
       <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Setting" component={SettingScreen} options = {{
+      <Drawer.Screen name="AboutDeveloper" component={AboutDeveloper} options = {{
         title : "About the Developer"
       }}/>
     </Drawer.Navigator>
