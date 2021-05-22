@@ -22,10 +22,11 @@ function CustomDrawerContent(props) {
     <DrawerContentScrollView {...props}>
       <View style = {{
         height : HEIGHT * 0.2,
-        width : WIDTH * 0.5,
-        borderWidth : 2,
+        width : WIDTH * 0.53,
+        borderBottomWidth : 2,
+        borderColor : Colors.text+"AA",
         alignSelf : "center",
-        justifyContent : "flex-end",
+        justifyContent : "center",
         alignItems : "center",
       }}> 
         <Text style = {{

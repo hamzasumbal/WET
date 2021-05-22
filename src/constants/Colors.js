@@ -5,5 +5,6 @@ export default {
     accent : 'rgb(44,44,46)',
     shade : '#007aff',
     red : '#ff3b30',
-    green : '#4cd964'
+    green : '#4cd964',
+    blue : "#007aff"
 }

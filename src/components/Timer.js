@@ -138,7 +138,7 @@ const Timmer = () => {
                     duration={10}
                     size={230}
                     colors={[
-                        [Colors.shade, 0.4],
+                        [Colors.blue, 0.4],
                     ]}
 
                     onComplete={completeSequence}
@@ -150,7 +150,7 @@ const Timmer = () => {
                                 <FontAwesome name="check" size={60} color={Colors.green} />
                                 :
                                 <Animated.Text style={{
-                                    color: Colors.shade, fontSize: 70, fontWeight: 'bold'
+                                    color: Colors.blue, fontSize: 70, fontWeight: 'bold'
                                 }}>
                                     {remainingTime}
                                 </Animated.Text>
