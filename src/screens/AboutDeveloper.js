@@ -19,7 +19,7 @@ const AboutDeveloper = ({ navigation }) => {
         style={styles.container}
     >
         <View style={{ flex: 1 }}>
-            <Header scrollY={scrollY} />
+            <Header scrollY={scrollY} text = {"About the Developer"}/>
             <DrawerIcon onPress={navigation.openDrawer} />
             <Animated.ScrollView style={{ flex: 1 }}
                 onScroll={
@@ -44,7 +44,7 @@ const AboutDeveloper = ({ navigation }) => {
                     <View style = {styles.imageBorder}>
                     <Image style={styles.image} source = {require('../../assets/profileimage.png')}/>
                     </View>
-                    <Spacer/>
+                   <Spacer/>
                     <Text style = {styles.name}>Hamza Sumbal</Text>
                     <Spacer/>
                     <Text style = {styles.bio}>React Native Developer</Text>
@@ -100,11 +100,11 @@ const styles = StyleSheet.create({
         borderRadius: 110,
         alignItems : "center",
         justifyContent : "center",
-        backgroundColor : Colors.shade
+        backgroundColor : Colors.shade,
     },
     messageContainer : {
         width : WIDTH * 0.8,
-        height : 200,
+        height : "auto",
         backgroundColor : Colors.accent,
         borderRadius : 10,
         padding : 20

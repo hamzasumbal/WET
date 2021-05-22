@@ -6,8 +6,12 @@ import DrawerIcon from '../components/DrawerIcon';
 import Spacer from '../components/Spacer';
 import Header from '../components/Header'
 import StartButton from '../components/StartButton';
+import Steps from '../components/Steps';
+import HowItWorks from '../components/HowItWorks';
 
 const HEIGHT = Dimensions.get('screen').height
+const WIDTH = Dimensions.get('screen').width
+
 
 const HomeScreen = ({ navigation }) => {
 
@@ -18,9 +22,9 @@ const HomeScreen = ({ navigation }) => {
         style={styles.container}
     >
         <View style={{ flex: 1 ,}}>
-            <Header scrollY={scrollY} />
+            <Header scrollY={scrollY} text = {"Water Eject Tool"}/>
             <DrawerIcon onPress = {navigation.openDrawer}/>
-            <Animated.ScrollView style={{ flex: 1 }}
+            <Animated.ScrollView style={{ flex: 1, marginBottom : 80 }}
                 onScroll={
                     Animated.event([
                         {
@@ -38,8 +42,15 @@ const HomeScreen = ({ navigation }) => {
                 stickyHeaderIndices={[0]}
             >
                 <Heading scrollY={scrollY} text={"Water Eject Tool"} />
+                <Spacer vertical = {20}/>
+                <Text style = {styles.message}>Eject 💦 water from your phone's speakers after getting it wet.</Text>
+                <Spacer vertical = {20}/>
+                <Steps/>
+                <Spacer vertical = {20}/>
+                <HowItWorks/>
+                <Spacer vertical = {20}/>
             </Animated.ScrollView>
-            <StartButton text = {"Start"} onPress = {()=>navigation.navigate("Play")}/>
+            <StartButton text = {"Eject Water"} onPress = {()=>navigation.navigate("Play")}/>
         </View>
     </SafeAreaView>
 };
@@ -50,6 +61,14 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.bg,
         flex: 1,
         paddingTop: Platform.OS === "android" ? HEIGHT * 0.045 : null,
+    },
+    message : {
+        color : Colors.text,
+        width : WIDTH * 0.9,
+        alignSelf : "center",
+        fontSize : 16,
+        textAlign :"center",
+        lineHeight : 25
     }
 });
 

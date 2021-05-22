@@ -5,7 +5,7 @@ import Colors from '../constants/Colors'
 const WIDTH = Dimensions.get('screen').width;
 
 
-const Header = ({ scrollY }) => {
+const Header = ({ scrollY, text }) => {
 
 
     const opacityBG = {
@@ -41,7 +41,7 @@ const Header = ({ scrollY }) => {
             <Animated.Text style={[styles.text,
             {
                 opacity : opacityText.opacity
-            }]}>Water Eject Tool</Animated.Text>
+            }]}>{text}</Animated.Text>
         </Animated.View>
     </>
 }
