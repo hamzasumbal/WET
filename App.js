@@ -1,14 +1,17 @@
-import * as React from 'react';
-import { View, Text , Dimensions} from 'react-native';
+import React,{useState} from 'react';
+import { View, Text , Dimensions, Appearance} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator,DrawerContentScrollView,DrawerItemList, } from '@react-navigation/drawer';
 import HomeScreen from './src/screens/HomeScreen';
+import { Provider as ThemeProvider } from './src/contexts/ThemeContext';
 import SettingScreen from './src/screens/SettingScreen';
 import PlayScreen from './src/screens/PlayScreen';
 import Colors from './src/constants/Colors';
 import AboutDeveloper from './src/screens/AboutDeveloper';
 import Spacer from './src/components/Spacer';
+import useCachedResources from './src/hooks/useCachedResources';
+import ToggleSwitch from './src/components/ToggleSwitch';
 
 
 const HEIGHT = Dimensions.get('screen').height
@@ -19,6 +22,7 @@ const Drawer = createDrawerNavigator();
 
 function CustomDrawerContent(props) {
   return (
+    
     <DrawerContentScrollView {...props}>
       <View style = {{
         height : HEIGHT * 0.2,
@@ -37,6 +41,8 @@ function CustomDrawerContent(props) {
       </View>
       <Spacer vertical = {HEIGHT * 0.07}/>
       <DrawerItemList {...props} />
+      <Spacer vertical = {HEIGHT * 0.04}/>
+      <ToggleSwitch/>
     </DrawerContentScrollView>
   );
 }
@@ -68,6 +74,17 @@ function MyDrawer() {
 }
 
 function App() {
+
+
+
+  const [loadingComplete] = useCachedResources();
+
+  if (!loadingComplete) {
+    return null;
+  }
+
+
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -82,4 +99,14 @@ function App() {
   );
 }
 
-export default App;
+
+export default () => {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+};
+
+
+/* export default App */
