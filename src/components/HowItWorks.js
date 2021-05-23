@@ -8,11 +8,11 @@ const WIDTH = Dimensions.get('screen').width
 
 const HowItWorks = () => {
 
-
-    return <View style={styles.container}>
-        <Text style={styles.heading}>How It Works?</Text>
+    const Color = Colors();
+    return <View style={[styles.container,{backgroundColor : Color.accent}]}>
+        <Text style={[styles.heading,{color : Color.text}]}>How It Works?</Text>
         <Spacer/>
-        <Text style = {styles.text}>So you've dropped your phone in the 🚽 toilet, 🚰 sink or 🏊‍ pool? When water gets into your phone's speaker enclosure the sound becomes muffled. Leaving any type of fluid in your speaker can cause serious damage when it dries out. It works just like the ⌚️ Apple watch's built-in water ejection feature. It plays a specific tone that generates sound waves which causes the water to be ejected.</Text>
+        <Text style = {[styles.text,{color : Color.text}]}>So you've dropped your phone in the 🚽 toilet, 🚰 sink or 🏊‍ pool? When water gets into your phone's speaker enclosure the sound becomes muffled. Leaving any type of fluid in your speaker can cause serious damage when it dries out. It works just like the ⌚️ Apple watch's built-in water ejection feature. It plays a specific tone that generates sound waves which causes the water to be ejected.</Text>
         <Spacer/>
         <Image source = {require('../../assets/solution.gif')} style = {{
             width: WIDTH * 0.8,
@@ -20,7 +20,7 @@ const HowItWorks = () => {
             borderRadius : 10
         }}/>
         <Text style = {{
-            color : Colors.text,
+            color : Color.text,
             alignSelf : "flex-end",
             fontSize : 12,
             opacity : 0.5,
@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
         width: WIDTH * 0.9,
         height: "auto",
         alignSelf: "center",
-        backgroundColor: Colors.accent,
         borderRadius: 10,
         padding: 15,
         alignItems : "center"
@@ -42,11 +41,9 @@ const styles = StyleSheet.create({
     heading: {
         fontSize: 32,
         fontWeight: "600",
-        color: Colors.text,
         alignSelf : "flex-start"
     },
     text : {
-        color : Colors.text,
         textAlign : "justify",
         fontSize : 16,
         width : WIDTH * 0.8,

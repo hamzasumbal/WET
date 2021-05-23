@@ -10,13 +10,15 @@ import Header from '../components/Header'
 const HEIGHT = Dimensions.get('screen').height
 const WIDTH = Dimensions.get('screen').width
 
+
+
 const AboutDeveloper = ({ navigation }) => {
 
     const scrollY = useRef(new Animated.Value(0)).current;
-
+    const Color = Colors();
 
     return <SafeAreaView
-        style={styles.container}
+        style={[styles.container,{backgroundColor : Color.bg}]}
     >
         <View style={{ flex: 1 }}>
             <Header scrollY={scrollY} text = {"About the Developer"}/>
@@ -41,24 +43,24 @@ const AboutDeveloper = ({ navigation }) => {
                 <Heading scrollY={scrollY} text={"About The Developer"} />
                 <View style={{ alignItems: "center",}}>
                     <Spacer  vertical = {30}/>
-                    <View style = {styles.imageBorder}>
+                    <View style = {[styles.imageBorder,{backgroundColor : Color.shade}]}>
                     <Image style={styles.image} source = {require('../../assets/profileimage.jpg')}/>
                     </View>
                    <Spacer/>
-                    <Text style = {styles.name}>Hamza Sumbal</Text>
+                    <Text style = {[styles.name,{color : Color.text}]}>Hamza Sumbal</Text>
                     <Spacer/>
-                    <Text style = {styles.bio}>React Native Developer</Text>
+                    <Text style = {[styles.bio],{color : Color.text}}>React Native Developer</Text>
                     <Spacer/>
                     <TouchableOpacity
                     onPress = {()=>Linking.openURL("https://github.com/hamzasumbal")}
                     >
-                    <Text style ={styles.link}>https://github.com/hamzasumbal</Text>
+                    <Text style ={[styles.link,{color : Color.shade}]}>https://github.com/hamzasumbal</Text>
                     </TouchableOpacity>
                     <Spacer vertical = {20}/>
-                    <View style ={styles.messageContainer}>
-                    <Text style = {[styles.message,{fontWeight : "bold", fontSize : 18}]}>Thank you for Installing my App.</Text>
+                    <View style ={[styles.messageContainer,{backgroundColor : Color.accent}]}>
+                    <Text style = {[styles.message,{fontWeight : "bold", fontSize : 18, color : Color.text}]}>Thank you for Installing my App.</Text>
                     <Spacer/>
-                    <Text style = {styles.message}> I hope you find it useful and enjoying every bit of it. Makesure to download more exciting apps I have for you guys. </Text>
+                    <Text style = {[styles.message,{color  :Color.text}]}> I hope you find it useful and enjoying every bit of it. Makesure to download more exciting apps I have for you guys. </Text>
                     </View>
                 </View>
                 <Spacer vertical = {20}/>
@@ -82,15 +84,12 @@ const styles = StyleSheet.create({
     },
     name : {
         fontSize : 30,
-        color : Colors.text,
         fontWeight : "700"
     },
     bio : {
         fontSize : 20,
-        color : Colors.text
     },
     link : {
-        color : Colors.shade,
         fontSize : 16,
         textDecorationLine: 'underline',
     },
@@ -100,18 +99,15 @@ const styles = StyleSheet.create({
         borderRadius: 110,
         alignItems : "center",
         justifyContent : "center",
-        backgroundColor : Colors.shade,
     },
     messageContainer : {
         width : WIDTH * 0.8,
         height : "auto",
-        backgroundColor : Colors.accent,
         borderRadius : 10,
         padding : 20
     },
     message : {
         fontSize : 18,
-        color : Colors.text,
         textAlign: "center",
         lineHeight : 24
     }

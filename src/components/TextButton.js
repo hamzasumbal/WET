@@ -10,8 +10,8 @@ const HEIGHT = Dimensions.get("screen").height;
 const TextButton = ({ text, onPress, showIcon, play }) => {
 
 
-
-    return <TouchableOpacity style={styles.container}
+    const Color = Colors();
+    return <TouchableOpacity style={[styles.container,{backgroundColor : Color.shade}]}
         onPress={onPress}
     >
         {showIcon ?
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     container: {
         width: "auto",
         height: 60,
-        backgroundColor: Colors.shade,
         borderRadius: 10,
         alignSelf: "center",
         marginTop: HEIGHT * 0.08,

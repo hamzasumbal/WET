@@ -10,12 +10,12 @@ const HEIGHT = Dimensions.get('screen').height
 
 const PlayScreen = ({navigation}) => {
 
-
+  
     const [count, setCount] = useState(3)
-
+    const Color = Colors();
 
     return <SafeAreaView
-        style={styles.container}
+        style={[styles.container,{backgroundColor : Color.bg}]}
     >
         
         
@@ -25,7 +25,7 @@ const PlayScreen = ({navigation}) => {
                 top : 25,
                 left : 10
             }} onPress = {navigation.goBack}>
-        <Feather name="chevron-left" size={42} color={Colors.text} />
+        <Feather name="chevron-left" size={42} color={Color.text} />
         </TouchableOpacity>
             {count === 0 ?
 
@@ -43,7 +43,6 @@ const PlayScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Colors.bg,
         flex: 1,
         paddingTop: Platform.OS === "android" ? HEIGHT * 0.045 : null,
     },

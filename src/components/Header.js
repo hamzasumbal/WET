@@ -7,7 +7,7 @@ const WIDTH = Dimensions.get('screen').width;
 
 const Header = ({ scrollY, text }) => {
 
-
+    const Color = Colors();
     const opacityBG = {
         opacity: scrollY.interpolate({
             inputRange: [0, 0, 50],
@@ -29,18 +29,21 @@ const Header = ({ scrollY, text }) => {
             position: "absolute",
             width: WIDTH,
             height: 200,
-            backgroundColor: Colors.accent,
+            backgroundColor: Color.accent,
             transform: [{
                 translateY: -200
             }],
-            backgroundColor: Colors.accent,
+            backgroundColor: Color.accent,
             opacity: opacityBG.opacity
         }} />
         <Animated.View style={[styles.container,
-        { opacity: opacityBG.opacity }]}>
+        { opacity: opacityBG.opacity,
+         backgroundColor : Color.accent,
+         borderColor : Color.text }]}>
             <Animated.Text style={[styles.text,
             {
-                opacity : opacityText.opacity
+                opacity : opacityText.opacity,
+                color : Color.text
             }]}>{text}</Animated.Text>
         </Animated.View>
     </>
@@ -55,12 +58,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         flexDirection: "row",
         alignSelf: "center",
-        backgroundColor: Colors.accent,
         borderBottomWidth  : 0.25,
-        borderColor  : Colors.text
     },
     text: {
-        color: Colors.text,
         fontSize: 18,
         fontWeight: "700",
     }

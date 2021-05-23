@@ -8,14 +8,14 @@ const WIDTH = Dimensions.get("screen").width;
 
 const CTAButton = ({ play, setPlay, sound, onPress }) => {
 
-
+    const Color = Colors();
     /*   const [play, setPlay] = useState(false) */
 
 
     return <TouchableOpacity style={[styles.container, {
-        backgroundColor: play ? Colors.shade : Colors.bg,
+        backgroundColor: play ? Color.shade : Color.bg,
         borderWidth: 3,
-        borderColor: !play ? Colors.shade : Colors.bg
+        borderColor: !play ? Color.shade : Color.bg
     }]}
         onPress={async () => {
             if (onPress) {
@@ -32,9 +32,9 @@ const CTAButton = ({ play, setPlay, sound, onPress }) => {
         }}
     >
         {play ?
-            <AntDesign name="pause" size={38} color={Colors.bg} />
+            <AntDesign name="pause" size={38} color={Color.bg} />
             :
-            <Entypo name="controller-play" size={38} color={Colors.shade} style={{
+            <Entypo name="controller-play" size={38} color={Color.shade} style={{
                 left: 3
             }} />
         }
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     container: {
         width: 70,
         height: 70,
-        backgroundColor: Colors.shade,
         borderRadius: 80,
         alignSelf: "center",
         marginTop: 60,

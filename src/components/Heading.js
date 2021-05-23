@@ -7,12 +7,13 @@ const WIDTH = Dimensions.get('window').width;
 
 const Heading = ({scrollY, text}) => {
 
-
+    const Color = Colors();
+    
     return <Animated.View style={styles.container}>
         <Animated.Text
             style={{
                 fontWeight: 'bold',
-                color: Colors.text,
+                color: Color.text,
                 fontSize: scrollY.interpolate({
                     inputRange: [-250, -25],
                     outputRange: [37, 32],

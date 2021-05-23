@@ -5,13 +5,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator,DrawerContentScrollView,DrawerItemList, } from '@react-navigation/drawer';
 import HomeScreen from './src/screens/HomeScreen';
 import { Provider as ThemeProvider } from './src/contexts/ThemeContext';
-import SettingScreen from './src/screens/SettingScreen';
 import PlayScreen from './src/screens/PlayScreen';
 import Colors from './src/constants/Colors';
 import AboutDeveloper from './src/screens/AboutDeveloper';
 import Spacer from './src/components/Spacer';
 import useCachedResources from './src/hooks/useCachedResources';
 import ToggleSwitch from './src/components/ToggleSwitch';
+import DrawerContent from './src/components/DrawerContent';
 
 
 const HEIGHT = Dimensions.get('screen').height
@@ -23,27 +23,7 @@ const Drawer = createDrawerNavigator();
 function CustomDrawerContent(props) {
   return (
     
-    <DrawerContentScrollView {...props}>
-      <View style = {{
-        height : HEIGHT * 0.2,
-        width : WIDTH * 0.53,
-        borderBottomWidth : 2,
-        borderColor : Colors.text+"AA",
-        alignSelf : "center",
-        justifyContent : "center",
-        alignItems : "center",
-      }}> 
-        <Text style = {{
-          fontSize : 20,
-          fontWeight : "bold",
-          color : Colors.text
-        }}>Water Eject Tool</Text>
-      </View>
-      <Spacer vertical = {HEIGHT * 0.07}/>
-      <DrawerItemList {...props} />
-      <Spacer vertical = {HEIGHT * 0.04}/>
-      <ToggleSwitch/>
-    </DrawerContentScrollView>
+    <DrawerContent props = {props}/>
   );
 }
 
@@ -54,16 +34,7 @@ function MyDrawer() {
     drawerPosition = {'right'}
     drawerStyle={{
 	    width: WIDTH * 0.6,
-      backgroundColor : Colors.accent
 	  }}
-    drawerContentOptions = {
-      {
-        labelStyle : {
-          color : Colors.text,
-          fontWeight: "700"
-        },
-      }
-    }
     >
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="AboutDeveloper" component={AboutDeveloper} options = {{

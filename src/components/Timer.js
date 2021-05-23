@@ -18,6 +18,7 @@ const Timmer = () => {
     const [sound, setSound] = useState();
     const [complete, setComplete] = useState(false)
     const [key, setKey] = useState(0);
+    const Color = Colors();
 
     const [play, setPlay] = useState(true)
 
@@ -133,12 +134,12 @@ const Timmer = () => {
             }}>
                 <CountdownCircleTimer
                     key={key}
-                    trailColor={Colors.accent}
+                    trailColor={Color.accent}
                     isPlaying={play}
                     duration={10}
                     size={230}
                     colors={[
-                        [Colors.blue, 0.4],
+                        [Color.blue, 0.4],
                     ]}
 
                     onComplete={completeSequence}
@@ -147,10 +148,10 @@ const Timmer = () => {
 
                         return <>
                             {remainingTime === 0 ?
-                                <FontAwesome name="check" size={60} color={Colors.green} />
+                                <FontAwesome name="check" size={60} color={Color.green} />
                                 :
                                 <Animated.Text style={{
-                                    color: Colors.blue, fontSize: 70, fontWeight: 'bold'
+                                    color: Color.blue, fontSize: 70, fontWeight: 'bold'
                                 }}>
                                     {remainingTime}
                                 </Animated.Text>

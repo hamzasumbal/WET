@@ -9,8 +9,11 @@ const WIDTH = Dimensions.get('screen').width
 const Steps = () => {
 
 
-    return <View style={styles.container}>
-        <Text style={styles.heading}>Steps</Text>
+    const Color = Colors();
+
+
+    return <View style={[styles.container,{backgroundColor : Color.accent}]}>
+        <Text style={[styles.heading,{color: Color.text,}]}>Steps</Text>
         <Spacer/>
         <Image source={require('../../assets/phonefront.png')} style={{
             width: 100,
@@ -19,7 +22,7 @@ const Steps = () => {
             resizeMode={"contain"}
         />
         <Spacer/>
-        <Text style = {styles.text}>1. Remove from silent and set the volume to maximum</Text>
+        <Text style = {[styles.text,{color : Color.text,}]}>1. Remove from silent and set the volume to maximum</Text>
         <Spacer vertical = {20}/>
         <Image source={require('../../assets/phoneback.png')} style={{
              width: 100,
@@ -28,7 +31,7 @@ const Steps = () => {
             resizeMode={"contain"}
         />
         <Spacer/>
-        <Text style = {styles.text}>2. Press "Start" and place your phone with screen facing down.</Text>
+        <Text style = {[styles.text,{color : Color.text,}]}>2. Press "Start" and place your phone with screen facing down.</Text>
         <Spacer/>
     </View>
 };
@@ -38,7 +41,6 @@ const styles = StyleSheet.create({
         width: WIDTH * 0.9,
         height: "auto",
         alignSelf: "center",
-        backgroundColor: Colors.accent,
         borderRadius: 10,
         padding: 15,
         alignItems : "center"
@@ -46,11 +48,9 @@ const styles = StyleSheet.create({
     heading: {
         fontSize: 32,
         fontWeight: "600",
-        color: Colors.text,
         alignSelf : "flex-start"
     },
     text : {
-        color : Colors.text,
         textAlign : "center",
         fontSize : 16,
         width : WIDTH * 0.8,

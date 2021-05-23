@@ -7,6 +7,8 @@ const HEIGHT = Dimensions.get('screen').height
 
 const Countdown = ({count , setCount}) => {
 
+    
+    const Color = Colors();
     const Anim = useRef(new Animated.Value(0)).current;
     const [sound, setSound] = useState();
     const springAnim = async () => {
@@ -71,7 +73,7 @@ const Countdown = ({count , setCount}) => {
                             outputRange: [20, 60]
                         }),
                         fontWeight: "bold",
-                        color : Colors.green
+                        color : Color.green
                     }}
                 >{count}</Animated.Text>
 };
