@@ -14,7 +14,7 @@ const StopButton = ({ onPress }) => {
     return <TouchableOpacity style={[styles.container]}
     onPress = {onPress}
     >
-        <Entypo name="controller-stop" size={42} color="black" />
+        <Entypo name="controller-stop" size={42} color={Colors.bg} />
     </TouchableOpacity>
 };
 

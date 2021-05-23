@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     container: {
         width: WIDTH * 0.9,
         height: "auto",
-        borderWidth: 1,
         alignSelf: "center",
         backgroundColor: Colors.accent,
         borderRadius: 10,

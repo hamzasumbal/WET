@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { View, StyleSheet, Text, SafeAreaView, ScrollView, Animated, FlatList, Dimensions } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView, ScrollView, Animated, FlatList, Dimensions, Appearance } from 'react-native';
 import Heading from '../components/Heading';
 import Colors from '../constants/Colors';
 import DrawerIcon from '../components/DrawerIcon';
@@ -8,6 +8,7 @@ import Header from '../components/Header'
 import StartButton from '../components/StartButton';
 import Steps from '../components/Steps';
 import HowItWorks from '../components/HowItWorks';
+import { StatusBar } from 'expo-status-bar';
 
 const HEIGHT = Dimensions.get('screen').height
 const WIDTH = Dimensions.get('screen').width
@@ -15,12 +16,14 @@ const WIDTH = Dimensions.get('screen').width
 
 const HomeScreen = ({ navigation }) => {
 
+
     const scrollY = useRef(new Animated.Value(0)).current;
 
 
     return <SafeAreaView
         style={styles.container}
     >
+        <StatusBar style="light" />
         <View style={{ flex: 1 ,}}>
             <Header scrollY={scrollY} text = {"Water Eject Tool"}/>
             <DrawerIcon onPress = {navigation.openDrawer}/>

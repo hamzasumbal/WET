@@ -10,15 +10,15 @@ const Header = ({ scrollY, text }) => {
 
     const opacityBG = {
         opacity: scrollY.interpolate({
-            inputRange: [0, 0, 100],
+            inputRange: [0, 0, 50],
             outputRange: [0, 0, 1]
         })
     }
 
     const opacityText  = {
         opacity: scrollY.interpolate({
-            inputRange: [0, 60, 100],
-            outputRange: [0, 0, 1]
+            inputRange: [0, 20, 50],
+            outputRange: [0, 0.2, 1]
         })
     }
 

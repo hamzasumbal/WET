@@ -61,7 +61,7 @@ const AboutDeveloper = ({ navigation }) => {
                     <Text style = {styles.message}> I hope you find it useful and enjoying every bit of it. Makesure to download more exciting apps I have for you guys. </Text>
                     </View>
                 </View>
-
+                <Spacer vertical = {20}/>
             </Animated.ScrollView>
 
         </View>

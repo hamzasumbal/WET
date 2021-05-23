@@ -17,9 +17,9 @@ const TextButton = ({ text, onPress, showIcon, play }) => {
         {showIcon ?
             <>
                 {play ?
-                    <Foundation name="pause" size={24} color={Colors.text} style={{ marginHorizontal: 20,}} />
+                    <Foundation name="pause" size={24} color={"white"} style={{ marginHorizontal: 20,}} />
                     :
-                    <Foundation name="play" size={24} color={Colors.text} style={{ marginHorizontal: 20, }} />
+                    <Foundation name="play" size={24} color={"white"} style={{ marginHorizontal: 20, }} />
                 }
             </>
             : null
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     text: {
-        color: Colors.text,
+        color: "white",
         fontSize: 18,
         fontWeight: "bold",
         paddingRight: 20
