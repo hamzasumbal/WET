@@ -1,7 +1,5 @@
 import React, { useRef, useState, useContext } from 'react';
-import { View, StyleSheet, Text, SafeAreaView, ScrollView, Animated, FlatList, Dimensions, Appearance } from 'react-native';
-
-
+import { View, StyleSheet, Text, SafeAreaView, ScrollView, Animated, FlatList, Dimensions, } from 'react-native';
 import Heading from '../components/Heading';
 import Colors from '../constants/Colors';
 import DrawerIcon from '../components/DrawerIcon';

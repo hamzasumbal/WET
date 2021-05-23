@@ -4,13 +4,13 @@ const ThemeContext = React.createContext();
 
 
 export const Provider = ({ children}) => {
-//define States
+
     const [theme, setTheme] = useState("light");
 
     const isThemeStored = async ()=>{
 
         try {
-            const value = await AsyncStorage.getItem('themeTest')
+            const value = await AsyncStorage.getItem('theme')
             if(value !== null) {
               setTheme(value)
               console.log("theme is stored already ", value)
@@ -28,7 +28,7 @@ export const Provider = ({ children}) => {
         setTheme(theme)
 
         try {
-            await AsyncStorage.setItem('themeTest', theme)
+            await AsyncStorage.setItem('theme', theme)
           } catch (e) {
             // saving error
           }
@@ -36,18 +36,6 @@ export const Provider = ({ children}) => {
         console.log("theme is now set to : ", theme)
     }
 
-   /*  const addblogpost = async (title1, content1, callback) => {
-         await jsonserver.post("/blogposts", { title: title1,  content: content1 });
-         setblogpost([...blogpost, { title: title1, content: content1 }])
-         if (callback)
-         {
-             callback();
-         }
-    } 
-
-
-
- */
 
     return <ThemeContext.Provider value={{ state: theme, changeTheme, isThemeStored }}>
 

@@ -13,7 +13,7 @@ const DrawerContent = ({props})=>{
     const Color = Colors();
     return<DrawerContentScrollView {...props} style = {{
         backgroundColor : Color.accent
-    }}>
+    }} >
     <View style = {{
       height : HEIGHT * 0.2,
       width : WIDTH * 0.53,
@@ -34,7 +34,7 @@ const DrawerContent = ({props})=>{
         color : Color.text,
         fontWeight : "700"
     }}/>
-    <Spacer vertical = {HEIGHT * 0.04}/>
+    <Spacer vertical = {HEIGHT * 0.07}/>
     <ToggleSwitch/>
   </DrawerContentScrollView>
 }

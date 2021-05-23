@@ -1,5 +1,5 @@
 import React, { useState , useContext, useEffect} from "react";
-import { View, Switch, StyleSheet } from "react-native";
+import { View, Switch, StyleSheet, Text } from "react-native";
 import ThemeContext from "../contexts/ThemeContext";
 
 const ToggleSwitch = () => {
@@ -36,6 +36,10 @@ useEffect(()=>{
 
   return (
     <View style={styles.container}>
+        <Text style = {{
+            fontSize : 20,
+            paddingHorizontal : 10
+        }}>🌙</Text>
       <Switch
         trackColor={{ false: "#767577", true: "#81b0ff" }}
         thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -43,6 +47,10 @@ useEffect(()=>{
         onValueChange={toggleSwitch}
         value={isEnabled}
       />
+      <Text style = {{
+            fontSize : 25,
+            paddingHorizontal : 10
+        }}>☀️</Text>
     </View>
   );
 }
@@ -51,7 +59,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    flexDirection : "row"
   }
 });
 
