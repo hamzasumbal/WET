@@ -26,9 +26,11 @@ const Timmer = () => {
 
         Animated.spring(Anim, {
             toValue: 1,
-            duration: 500,
+            duration: 600,
             useNativeDriver: false
         }).start(); // start the sequence group
+
+
     };
 
     const springOutAnim = async () => {
@@ -138,6 +140,8 @@ const Timmer = () => {
                     isPlaying={play}
                     duration={10}
                     size={230}
+                    trailStrokeWidth = {20}
+                    strokeWidth = {15}
                     colors={[
                         [Color.blue, 0.4],
                     ]}
@@ -148,10 +152,10 @@ const Timmer = () => {
 
                         return <>
                             {remainingTime === 0 ?
-                                <FontAwesome name="check" size={60} color={Color.green} />
+                                <FontAwesome name="check" size={80} color={Color.green} />
                                 :
                                 <Animated.Text style={{
-                                    color: Color.blue, fontSize: 70, fontWeight: 'bold'
+                                    color: Color.blue, fontSize: 80, fontWeight: 'bold'
                                 }}>
                                     {remainingTime}
                                 </Animated.Text>
