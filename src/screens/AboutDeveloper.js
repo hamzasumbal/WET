@@ -4,6 +4,7 @@ import * as Linking from 'expo-linking';
 import Heading from '../components/Heading';
 import Colors from '../constants/Colors';
 import DrawerIcon from '../components/DrawerIcon';
+import BackIcon from '../components/BackIcon'
 import Spacer from '../components/Spacer';
 import Header from '../components/Header'
 
@@ -23,6 +24,7 @@ const AboutDeveloper = ({ navigation }) => {
         <View style={{ flex: 1 }}>
             <Header scrollY={scrollY} text = {"About the Developer"}/>
             <DrawerIcon onPress={navigation.openDrawer} />
+            <BackIcon onPress = {navigation.goBack}/>
             <Animated.ScrollView style={{ flex: 1 }}
                 onScroll={
                     Animated.event([

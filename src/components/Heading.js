@@ -15,8 +15,8 @@ const Heading = ({scrollY, text}) => {
                 fontWeight: 'bold',
                 color: Color.text,
                 fontSize: scrollY.interpolate({
-                    inputRange: [-250, -25],
-                    outputRange: [37, 32],
+                    inputRange: [-300, -25],
+                    outputRange: [35, 32],
                     extrapolate: 'clamp'
                 }),
                 transform : [{
