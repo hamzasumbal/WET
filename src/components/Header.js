@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet, Text, Dimensions, SafeAreaView, Animated } from 'react-native';
-import DrawerIcon from './DrawerIcon';
 import Colors from '../constants/Colors'
 const WIDTH = Dimensions.get('screen').width;
 

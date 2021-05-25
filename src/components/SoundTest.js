@@ -11,7 +11,6 @@ const SoundTest = () => {
     const [play, setPlay] = useState(false)
 
     async function playSound() {
-        console.log('Loading Sound');
         const { sound } = await Audio.Sound.createAsync(
            require('../../assets/test-sound.mp3')
         );
@@ -30,7 +29,6 @@ const SoundTest = () => {
     useEffect(() => {
         return sound
             ? () => {
-                console.log('Unloading Sound');
                 sound.unloadAsync();
             }
             : undefined;

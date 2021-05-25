@@ -1,19 +1,14 @@
-import React, { useCallback } from 'react';
-import { View, Text, Dimensions, Appearance } from 'react-native';
+import React from 'react';
+import { View, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, } from '@react-navigation/drawer';
-import * as SplashScreen from 'expo-splash-screen';
+import { createDrawerNavigator,} from '@react-navigation/drawer';
 import HomeScreen from './src/screens/HomeScreen';
 import { Provider as ThemeProvider } from './src/contexts/ThemeContext';
 import PlayScreen from './src/screens/PlayScreen';
-import Colors from './src/constants/Colors';
 import AboutDeveloper from './src/screens/AboutDeveloper';
-import Spacer from './src/components/Spacer';
 import useCachedResources from './src/hooks/useCachedResources';
-import ToggleSwitch from './src/components/ToggleSwitch';
 import DrawerContent from './src/components/DrawerContent';
-import { useEffect } from 'react/cjs/react.development';
 
 
 const HEIGHT = Dimensions.get('screen').height
@@ -53,20 +48,9 @@ function App() {
   const [loadingComplete] = useCachedResources();
 
 
-  useEffect(() => {
-
-    const HideSplashScreen = async () => {
-      await SplashScreen.hideAsync()
-    }
-
-    if (loadingComplete) {
-      HideSplashScreen()
-    }
-
-  }, [loadingComplete])
 
   if (!loadingComplete) {
-    return null;
+    return <View style = {{flex: 1, backgroundColor : "#007AFF"}}/>;
   }
 
 
@@ -95,4 +79,3 @@ export default () => {
 };
 
 
-/* export default App */

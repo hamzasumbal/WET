@@ -28,7 +28,7 @@ const Timmer = () => {
             toValue: 1,
             duration: 600,
             useNativeDriver: false
-        }).start(); // start the sequence group
+        }).start(); 
 
 
     };
@@ -39,7 +39,7 @@ const Timmer = () => {
             toValue: 0.8,
             duration: 200,
             useNativeDriver: false
-        }).start(); // start the sequence group
+        }).start(); 
 
     };
 
@@ -49,7 +49,7 @@ const Timmer = () => {
             toValue: HEIGHT * 0.2,
             duration: 200,
             useNativeDriver: false
-        }).start(); // start the sequence group
+        }).start(); 
 
     };
 
@@ -60,7 +60,7 @@ const Timmer = () => {
             toValue: 0,
             duration: 150,
             useNativeDriver: false
-        }).start(); // start the sequence group
+        }).start(); 
 
     };
 
@@ -71,7 +71,7 @@ const Timmer = () => {
             toValue: WIDTH * 0.25,
             duration: 300,
             useNativeDriver: false
-        }).start(); // start the sequence group
+        }).start(); 
 
     };
 
@@ -82,12 +82,11 @@ const Timmer = () => {
             toValue: 0,
             duration: 200,
             useNativeDriver: false
-        }).start(); // start the sequence group
+        }).start(); 
 
     };
 
     async function playSound() {
-        console.log('Loading Sound');
         const { sound } = await Audio.Sound.createAsync(
             require('../../assets/water-eject.mp3')
         );
@@ -100,7 +99,6 @@ const Timmer = () => {
     useEffect(() => {
         return sound
             ? () => {
-                console.log('Unloading Sound');
                 sound.unloadAsync();
             }
             : undefined;

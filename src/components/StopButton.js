@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Text, Dimensions, TouchableOpacity, Touchable } from 'react-native';
 import Colors from '../constants/Colors';
 import { Entypo } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 const WIDTH = Dimensions.get("screen").width;
 
 

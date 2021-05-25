@@ -24,13 +24,12 @@ const Countdown = ({count , setCount}) => {
                 duration: 200,
                 useNativeDriver: false
             }),
-        ]).start(); // start the sequence group
+        ]).start();
 
 
     };
 
     async function playSound() {
-        console.log('Loading Sound');
         const { sound } = await Audio.Sound.createAsync(
            require('../../assets/countdown.mp3')
         );
@@ -42,7 +41,6 @@ const Countdown = ({count , setCount}) => {
       useEffect(() => {
         return sound
           ? () => {
-              console.log('Unloading Sound');
               sound.unloadAsync(); }
           : undefined;
       }, [sound]);
@@ -62,7 +60,6 @@ const Countdown = ({count , setCount}) => {
             })
         }, 1000)
 
-        // interval cleanup on component unmount
         return () => clearInterval(interval)
     }, [])
 

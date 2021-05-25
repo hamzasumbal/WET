@@ -13,10 +13,10 @@ export const Provider = ({ children}) => {
             const value = await AsyncStorage.getItem('theme')
             if(value !== null) {
               setTheme(value)
-              console.log("theme is stored already ", value)
+              console.log("theme is already set to ", value)
               return true;
             }
-                console.log("theme is not stored already")
+                console.log("theme is not set")
                 return false;
           } catch(e) {
             // error reading value

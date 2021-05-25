@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Asset } from 'expo-asset';
-import * as SplashScreen from 'expo-splash-screen';
-import { Appearance } from 'react-native';
 import ThemeContext from '../contexts/ThemeContext'
 
 function cacheImages(images) {
@@ -22,18 +20,9 @@ export default function useCachedResources() {
     useEffect(() => {
         async function loadResourcesAndDataAsync() {
 
-            await SplashScreen.preventAutoHideAsync();
-            if (!await isThemeStored()) {
-                const colorScheme = Appearance.getColorScheme();
-                if (colorScheme === 'dark') {
-                    await changeTheme("dark")
-                } else if (colorScheme === "light") {
-                    await changeTheme("light")
-                }
-                else {
-                    await changeTheme('dark')
-                }
 
+            if (!await isThemeStored()) {
+                    await changeTheme('dark')
             }
 
 
