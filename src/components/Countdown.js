@@ -16,7 +16,7 @@ const Countdown = ({count , setCount}) => {
         Animated.sequence([
             Animated.spring(Anim, {
                 toValue: 8,
-                duration: 700,
+                duration: 800,
                 useNativeDriver: false
             }),
             Animated.spring(Anim, {
