@@ -16,12 +16,12 @@ const Countdown = ({count , setCount}) => {
         Animated.sequence([
             Animated.spring(Anim, {
                 toValue: 8,
-                duration: 800,
+                duration: 700,
                 useNativeDriver: false
             }),
             Animated.spring(Anim, {
                 toValue: 0,
-                duration: 100,
+                duration: 200,
                 useNativeDriver: false
             }),
         ]).start(); // start the sequence group
