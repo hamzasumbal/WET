@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { View, Text , Dimensions, Appearance} from 'react-native';
+import { View, Text , Dimensions, Appearance, Image} from 'react-native';
 import { DrawerContentScrollView,DrawerItemList, } from '@react-navigation/drawer';
 import Spacer from './Spacer';
 import ToggleSwitch from './ToggleSwitch';
@@ -14,6 +14,7 @@ const DrawerContent = ({props})=>{
     return<DrawerContentScrollView {...props} style = {{
         backgroundColor : Color.accent
     }} >
+        
     <View style = {{
       height : HEIGHT * 0.2,
       width : WIDTH * 0.53,
@@ -23,6 +24,15 @@ const DrawerContent = ({props})=>{
       justifyContent : "center",
       alignItems : "center",
     }}> 
+    <Image
+        source = {require('../../assets/logo.png')}
+        style = {{
+            width : 60,
+            height : 60,
+            marginBottom : 7
+        }}
+        resizeMode = {"contain"}
+        />
       <Text style = {{
         fontSize : 20,
         fontWeight : "bold",

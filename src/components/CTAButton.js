@@ -32,7 +32,7 @@ const CTAButton = ({ play, setPlay, sound, onPress }) => {
         }}
     >
         {play ?
-            <AntDesign name="pause" size={38} color={Color.bg} />
+            <Entypo name="controller-paus" size={38} color={Color.bg} />
             :
             <Entypo name="controller-play" size={38} color={Color.shade} style={{
                 left: 3

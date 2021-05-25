@@ -41,6 +41,7 @@ export default function useCachedResources() {
                  require('../../assets/phoneback.png'),
                  require('../../assets/phonefront.png'),
                  require('../../assets/profileimage.jpg'),
+                 require('../../assets/logo.png'),
              ]);
      
              await Promise.all([...imageAssets]);

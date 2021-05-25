@@ -49,7 +49,7 @@ const AboutDeveloper = ({ navigation }) => {
                    <Spacer/>
                     <Text style = {[styles.name,{color : Color.text}]}>Hamza Sumbal</Text>
                     <Spacer/>
-                    <Text style = {[styles.bio],{color : Color.text}}>React Native Developer</Text>
+                    <Text style = {[styles.bio],{color : Color.text, fontSize : 18}}>React Native Developer</Text>
                     <Spacer/>
                     <TouchableOpacity
                     onPress = {()=>Linking.openURL("https://github.com/hamzasumbal")}
