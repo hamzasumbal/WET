@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Asset } from 'expo-asset';
+import * as SplashScreen from 'expo-splash-screen';
 import { Appearance } from 'react-native';
 import ThemeContext from '../contexts/ThemeContext'
 
@@ -21,7 +22,7 @@ export default function useCachedResources() {
     useEffect(() => {
          async function loadResourcesAndDataAsync() {
 
-
+            await SplashScreen.preventAutoHideAsync();
             if(!await isThemeStored())
             {
                 const colorScheme = Appearance.getColorScheme();
