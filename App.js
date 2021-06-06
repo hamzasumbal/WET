@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator,TransitionSpecs,CardStyleInterpolators } from '@react-navigation/stack';
 import { createDrawerNavigator,} from '@react-navigation/drawer';
 import HomeScreen from './src/screens/HomeScreen';
 import { Provider as ThemeProvider } from './src/contexts/ThemeContext';
@@ -62,8 +62,18 @@ function App() {
           headerShown: false
         }}
       >
-        <Stack.Screen name="Home" component={MyDrawer} />
-        <Stack.Screen name="Play" component={PlayScreen} />
+        <Stack.Screen name="Home" component={MyDrawer} 
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          gestureEnabled : true
+        }}
+        />
+        <Stack.Screen name="Play" component={PlayScreen} 
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          gestureEnabled : true
+        }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
