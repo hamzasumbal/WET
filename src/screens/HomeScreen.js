@@ -11,6 +11,7 @@ import HowItWorks from '../components/HowItWorks';
 import { StatusBar } from 'expo-status-bar';
 import ThemeContext from '../contexts/ThemeContext';
 import AdBanner from '../components/AdBanner';
+import { not } from 'react-native-reanimated';
 
 
 const HEIGHT = Dimensions.get('screen').height
@@ -25,11 +26,13 @@ const HomeScreen = ({ navigation }) => {
 
 
 
-    return <SafeAreaView
-        style={[styles.container,{backgroundColor : Color.bg}]}
+    return <>
+    <SafeAreaView style={{ flex:0, backgroundColor : Color.bg }} />
+    <SafeAreaView
+        style={[styles.container,{backgroundColor : Color.accent}]}
     >
         <StatusBar style={theme === "light"? "dark" : "light"} />
-        <View style={{ flex: 1 ,}}>
+        <View style={{ flex: 1 ,backgroundColor : Color.bg}}>
             <Header scrollY={scrollY} text = {"Water Eject Tool"}/>
             <DrawerIcon onPress = {navigation.openDrawer}/>
             <Animated.ScrollView style={{ flex: 1, marginBottom : 80 }}
@@ -62,6 +65,7 @@ const HomeScreen = ({ navigation }) => {
             <StartButton text = {"Start"} onPress = {()=>navigation.navigate("Play")}/>
         </View>
     </SafeAreaView>
+    </>
 };
 
 
