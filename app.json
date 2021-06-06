@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "WET-Dev",
+    "name": "WET",
     "slug": "water-eject-tool",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,14 +17,20 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config":{
+        "googleMobileAdsAppId": "ca-app-pub-9966379910420293~9684006377"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#007AFF"
       },
-      "package": "com.hamzasumbal.waterejecttool"
+      "package": "com.hamzasumbal.waterejecttool",
+      "config":{
+        "googleMobileAdsAppId": "ca-app-pub-9966379910420293~2216579896"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

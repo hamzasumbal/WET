@@ -1,5 +1,5 @@
-import React, { useRef, useState, useContext } from 'react';
-import { View, StyleSheet, Text, SafeAreaView, ScrollView, Animated, FlatList, Dimensions, } from 'react-native';
+import React, { useRef, useState, useContext, useEffect} from 'react';
+import { View, StyleSheet, Text, SafeAreaView, ScrollView, Animated, FlatList, Dimensions, Platform, } from 'react-native';
 import Heading from '../components/Heading';
 import Colors from '../constants/Colors';
 import DrawerIcon from '../components/DrawerIcon';
@@ -10,15 +10,19 @@ import Steps from '../components/Steps';
 import HowItWorks from '../components/HowItWorks';
 import { StatusBar } from 'expo-status-bar';
 import ThemeContext from '../contexts/ThemeContext';
+import AdBanner from '../components/AdBanner';
+
 
 const HEIGHT = Dimensions.get('screen').height
 const WIDTH = Dimensions.get('screen').width
+
 
 
 const HomeScreen = ({ navigation }) => {
     const {state : theme,} = useContext(ThemeContext)
     const Color = Colors();
     const scrollY = useRef(new Animated.Value(0)).current;
+
 
 
     return <SafeAreaView
@@ -50,6 +54,7 @@ const HomeScreen = ({ navigation }) => {
                 <Text style = {[styles.message,{color : Color.text}]}>Eject 💦 water from your phone's speakers after getting it wet.</Text>
                 <Spacer vertical = {20}/>
                 <Steps/>
+                <AdBanner/>
                 <Spacer vertical = {20}/>
                 <HowItWorks/>
                 <Spacer vertical = {20}/>
