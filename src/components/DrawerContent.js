@@ -4,6 +4,7 @@ import { DrawerContentScrollView,DrawerItemList, } from '@react-navigation/drawe
 import Spacer from './Spacer';
 import ToggleSwitch from './ToggleSwitch';
 import Colors from '../constants/Colors';
+import APP from '../../app.json'
 const HEIGHT = Dimensions.get('screen').height
 const WIDTH = Dimensions.get('screen').width
 
@@ -16,12 +17,12 @@ const DrawerContent = ({props})=>{
     }} >
         
     <View style = {{
-      height : HEIGHT * 0.2,
+      height : HEIGHT * 0.22,
       width : WIDTH * 0.53,
       borderBottomWidth : 2,
       borderColor : Color.text+"AA",
       alignSelf : "center",
-      justifyContent : "center",
+      justifyContent : "flex-end",
       alignItems : "center",
     }}> 
     <Image
@@ -38,6 +39,13 @@ const DrawerContent = ({props})=>{
         fontWeight : "bold",
         color : Color.text
       }}>Water Eject Tool</Text>
+      <Spacer/>
+      <Text style = {{
+        color : Color.text,
+        fontSize : 13,
+        opacity : 0.6
+      }}>version {APP.expo.version}</Text>
+      <Spacer/>
     </View>
     <Spacer vertical = {HEIGHT * 0.07}/>
     <DrawerItemList {...props} labelStyle = {{
