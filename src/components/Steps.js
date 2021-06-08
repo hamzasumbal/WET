@@ -31,7 +31,7 @@ const Steps = () => {
             resizeMode={"contain"}
         />
         <Spacer/>
-        <Text style = {[styles.text,{color : Color.text,}]}>2. Press "Start" and place your phone with screen facing down.</Text>
+        <Text style = {[styles.text,{color : Color.text,}]}>2. Press "Start" and place your phone with speaker facing downward.</Text>
         <Spacer/>
     </View>
 };
