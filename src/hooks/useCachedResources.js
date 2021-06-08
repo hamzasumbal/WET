@@ -32,7 +32,6 @@ export default function useCachedResources() {
                 const imageAssets = cacheImages([
                     require('../../assets/phoneback.png'),
                     require('../../assets/phonefront.png'),
-                    require('../../assets/profileimage.jpg'),
                     require('../../assets/logo.png'),
                 ]);
 

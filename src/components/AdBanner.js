@@ -16,8 +16,8 @@ const AdBanner = () => {
     const [error, setError] = useState(false)
     const Color = Colors();
 
-    const setUpAd = async () => {
-        await AdMobInterstitial.setAdUnitID(Platform.OS === "android" ? Keys.AndroidIntTestID : Keys.IOSIntTestID); // Test ID, Replace with your-admob-unit-id
+    const setUpIntAd = async () => {
+        await AdMobInterstitial.setAdUnitID(Platform.OS === "android" ? Keys.AndroidIntID : Keys.IOSIntID); // Test ID, Replace with your-admob-unit-id
         await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: false });
         await AdMobInterstitial.showAdAsync();
     }
@@ -25,7 +25,7 @@ const AdBanner = () => {
 
     useEffect(() => {
 
-        /*  setUpAd() */
+         /* setUpIntAd() */
     }, [])
 
     return <>
@@ -34,7 +34,7 @@ const AdBanner = () => {
             <Spacer vertical = {20}/>
                 <View style={[styles.ad, { backgroundColor: Color.accent }]} >
                     <AdMobBanner bannerSize={'largeBanner'}
-                        adUnitID={Platform.OS === "android" ? Keys.AndroidBannerTestID : Keys.IOSBannerTestID}
+                        adUnitID={Platform.OS === "android" ? Keys.AndroidBannerID : Keys.IOSBannerID}
                         servePersonalizedAds={false}
                         onDidFailToReceiveAdWithError={(error) => {
                             console.log(error)

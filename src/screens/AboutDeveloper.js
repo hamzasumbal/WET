@@ -47,7 +47,7 @@ const AboutDeveloper = ({ navigation }) => {
                 <View style={{ alignItems: "center", }}>
                     <Spacer vertical={30} />
                     <View style={[styles.imageBorder, { backgroundColor: Color.shade }]}>
-                        <Image style={styles.image} source={require('../../assets/profileimage.jpg')} />
+                        <Image style={styles.image} source={{uri  : "https://avatars.githubusercontent.com/u/70642483"}} />
                     </View>
                     <Spacer />
                     <Text style={[styles.name, { color: Color.text }]}>Hamza Sumbal</Text>
