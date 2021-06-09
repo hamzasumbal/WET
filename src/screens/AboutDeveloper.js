@@ -81,7 +81,7 @@ const AboutDeveloper = ({ navigation }) => {
                 <View style={[styles.messageContainer, { backgroundColor: Color.accent }]}>
                     <Text style={[styles.message, { fontWeight: "bold", fontSize: 18, color: Color.text }]}>Thank you for Installing my App.</Text>
                     <Spacer />
-                    <Text style={[styles.message, { color: Color.text }]}> I hope you find it useful and enjoying every bit of it. Stay tune for more exciting Apps. </Text>
+                    <Text style={[styles.message, { color: Color.text }]}> I hope you find it useful and enjoying every bit of it. Stay tune for more exciting apps. </Text>
                 </View>
                 </View>
             <Spacer vertical={20} />
