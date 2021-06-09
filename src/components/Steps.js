@@ -22,7 +22,7 @@ const Steps = () => {
             resizeMode={"contain"}
         />
         <Spacer/>
-        <Text style = {[styles.text,{color : Color.text,}]}>1. Remove from silent and set the volume to maximum</Text>
+        <Text style = {[styles.text,{color : Color.text,}]}>1. Remove from silent and set the volume to maximum.</Text>
         <Spacer vertical = {20}/>
         <Image source={require('../../assets/phoneback.png')} style={{
              width: 100,
