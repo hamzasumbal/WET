@@ -6,7 +6,7 @@ The app includes cool animation and a very user friendly interface.
 ## Playstore Link
 https://play.google.com/store/apps/details?id=com.hamzasumbal.waterejecttool
 
-## App Store
+## App Store Link
 Not available.
 
 ## Requirements
