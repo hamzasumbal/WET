@@ -3,7 +3,7 @@ A small personal project I did to get familiar with publishing app on playstore.
 The app plays sound which removes water from speaker grills, similar to how apple watch ejects water.
 The app includes cool animation and a friendly user interface. 
 
-**1000+ downloads**
+**50,000+ downloads**
 
 ## Playstore Link
 https://play.google.com/store/apps/details?id=com.hamzasumbal.waterejecttool
